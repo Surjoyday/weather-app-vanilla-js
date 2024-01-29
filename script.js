@@ -4,6 +4,7 @@ const searchBox = document.getElementById("input-text");
 const searchBtn = document.getElementById("search-btn");
 const cityToSearch = document.querySelector("#city-name");
 const weatherInfoContainer = document.querySelector(".weather-conatiner");
+const weatherText = document.getElementById("weather-txt");
 const errorMessage = document.querySelector(".error");
 const weatherImg = document.getElementById("weather-img");
 const temp = document.querySelector(".temp");
@@ -22,6 +23,8 @@ async function checkWeather(city) {
 
     const data = await response.json();
 
+    console.log(data);
+
     errorMessage.classList.add("hide");
 
     clearWeatherInfo();
@@ -33,6 +36,7 @@ async function checkWeather(city) {
 
     const presentWeather = data.weather[0].main.toLowerCase();
     weatherImg.src = `./images/${presentWeather}.png`;
+    weatherText.innerHTML = data.weather[0].main;
   } catch (error) {
     errorMessage.innerHTML =
       error.message || "An error occurred. Please try again later.";

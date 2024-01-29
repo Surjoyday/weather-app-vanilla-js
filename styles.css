@@ -70,6 +70,18 @@ body {
   margin-top: -10px;
 }
 
+#weather-txt {
+  font-weight: 200;
+  font-size: large;
+  color: #222;
+  background-color: #abbbd8;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 20%;
+  border-radius: 20px;
+  text-align: center;
+}
+
 .details {
   display: flex;
   align-items: center;
